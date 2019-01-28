@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: normal 1rem/1.5 'Roboto', sans-serif;
+  font: normal 1rem/1.5 'Roboto', sans-serif;
   background: var(--primary-color);
   color: #fff;
   overflow-x: hidden;
@@ -54,16 +54,20 @@ h1 { font-size: 2.3rem;}
   padding: 1rem;
   background: var(--secondary-color);
   transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Right Side */
-#timeline ul li:nth-child(odd) div {
+#timeline ul li:nth-child(odd) div { 
   left: 40px;
+  transform: translate(200px, 0);
 }
 
 /* Left Side */
 #timeline ul li:nth-child(even) div {
   left: -434px;
+  transform: translate(-200px, 0);
 }
 
 /* Dots */
@@ -102,6 +106,17 @@ h1 { font-size: 2.3rem;}
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent var(--secondary-color); 
+}
+
+/* Show Box */
+#timeline ul li.show div {
+transform: none;
+visibility: visible;
+opacity: 1;
+}
+
+timeline ul li.show:after {
+  background: var(--secondary-color);
 }
 
 @media(max-width: 900px) {
